@@ -1,0 +1,22 @@
+.navbar {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    /* background-color: black; */
+    color: white;
+    align-items: center;
+}
+
+.navbar-login-container {
+    display: flex;
+    padding-right: 2rem;
+}
+
+.navbar-logo-container {
+    padding: .5rem;
+    padding-left: 1rem;
+}
+
+.logo {
+    width: 40px;
+}
