@@ -1,6 +1,11 @@
+import { useState } from "react"
 import strataLogo from "../assets/STRATA_Logo.png";
 import "./Login.css";
 function Login() {
+    const [loginData, setLoginData] = useState({
+        "email": "",
+        "password": ""
+    })
     return (
         <>
             <div className="login-container">
@@ -16,15 +21,15 @@ function Login() {
                     <div className="login-entries">
                         <div className="login-email-container">
                             <div>Email</div>
-                            <input type="text" />
+                            <input type="text" onChange={(e) => setLoginData({...loginData, "email": e.target.value})}/>
                         </div>
                         <div className="login-password-container">
                             <div>Password</div>
-                            <input type="text" />
+                            <input type="text" onChange={(e) => setLoginData({...loginData, "password": e.target.value})}/>
                         </div>
                     </div>
                     <div className="login-button">
-                        <button>Sign in</button>
+                        <button onClick={() => alert("Email: " +  loginData["email"] + " Password: " + loginData["password"])}>Sign in</button>
                     </div>
                 </div>
             </div>
