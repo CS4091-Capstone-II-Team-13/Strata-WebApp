@@ -25,7 +25,11 @@ function Repository() {
                         Repository
                     </div>
                 </div>
-                
+                <div className="repository-options-container">
+                    <div className="branch-selector">
+                        main
+                    </div>
+                </div>
                 <div className="repository-file-container">
 
                 

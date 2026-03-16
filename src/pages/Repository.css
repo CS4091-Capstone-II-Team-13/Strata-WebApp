@@ -13,6 +13,24 @@
     padding-bottom: 1rem;
 }
 
+.repository-options-container {
+    width: 70%;
+    max-width: 600px;
+    padding-bottom: .5rem;
+    padding-top: 1rem;
+}
+
+.branch-selector {
+    display: flex;
+    justify-content: center;
+    border: 1px solid rgb(80, 84, 99);
+    border-radius: 5px;
+    width: 80px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #05101f;
+}
+
 .repository-file-container {
     width: 70%;
     max-width: 600px;
@@ -20,7 +38,7 @@
     border: 1px solid rgb(80, 84, 99);
     border-radius: 5px;
     flex-direction: column;
-    margin-top: 2rem;
+    margin-top: .5rem;
 }
 
 
