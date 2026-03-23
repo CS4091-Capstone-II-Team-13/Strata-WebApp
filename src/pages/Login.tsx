@@ -17,10 +17,7 @@ function Login() {
     e.preventDefault();
 
     try {
-      const data = await Auth.login(
-        loginData.username,
-        loginData.password,
-      );
+      const data = await Auth.login(loginData.username, loginData.password);
       console.log(data);
       setErrorDisplay("");
       navigate("/");
