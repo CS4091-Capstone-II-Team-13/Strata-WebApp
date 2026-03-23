@@ -1,17 +1,14 @@
-import { getAccessToken } from "../utils/util";
+import { authenticatedFetch } from "./Auth";
 class Projects {
   private static baseUrl = "";
 
   static async getProjects() {
-    const token = getAccessToken();
-
-    const response = await fetch(`${this.baseUrl}/api/v1/projects`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
+    const response = await authenticatedFetch(
+      `${this.baseUrl}/api/v1/projects`,
+      {
+        method: "GET",
       },
-    });
+    );
 
     const data = await response.json();
 
@@ -23,16 +20,13 @@ class Projects {
   }
 
   static async createProject(name: string, description: string) {
-    const token = getAccessToken();
-
-    const response = await fetch(`${this.baseUrl}/api/v1/projects`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
+    const response = await authenticatedFetch(
+      `${this.baseUrl}/api/v1/projects`,
+      {
+        method: "POST",
+        body: JSON.stringify({ name, description }),
       },
-      body: JSON.stringify({ name, description }),
-    });
+    );
 
     const data = await response.json();
 
