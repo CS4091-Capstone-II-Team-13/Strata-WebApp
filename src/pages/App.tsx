@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useIsLoggedIn } from "../hooks/useIsLoggedIn.ts";
 import Projects from "../services/Projects.ts";
 import Navbar from "../components/Navbar.tsx";
 import "./App.css";
@@ -11,13 +12,12 @@ interface Project {
 function App() {
   const [projects, setProjects] = useState<Project[]>([]);
   const projectHeader = projects ? "Projects" : "No Projects Found";
+  const isLoggedIn = useIsLoggedIn();
 
   useEffect(() => {
     const initAuth = async () => {
-      const token = localStorage.getItem("access_token");
-
-      if (!token) {
-        console.log("no token");
+      if (!isLoggedIn) {
+        console.log("not logged in");
         return;
       }
 
@@ -46,13 +46,17 @@ function App() {
     <>
       <div className="navbar-container">
         <Navbar></Navbar>
-        <div style={{ fontSize: "large" }}>{projectHeader}</div>
-        {projects.map((project: Project) => (
+        {isLoggedIn && (
           <>
-            <div>Project: {project.name}</div>
-            <div>Description: {project.description}</div>
+            <div style={{ fontSize: "large" }}>{projectHeader}</div>
+            {projects.map((project: Project) => (
+              <>
+                <div>Project: {project.name}</div>
+                <div>Description: {project.description}</div>
+              </>
+            ))}
           </>
-        ))}
+        )}
       </div>
     </>
   );
