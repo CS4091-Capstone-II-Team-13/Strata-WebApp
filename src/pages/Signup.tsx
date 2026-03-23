@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router";
-import AuthService from "../services/AuthService";
+import Auth from "../services/Auth";
 import strataLogo from "../assets/STRATA_Logo.png";
 import "./Signup.css";
 
@@ -25,7 +25,7 @@ function Signup() {
     }
 
     try {
-      const data = await AuthService.signup(
+      const data = await Auth.signup(
         signupData.username,
         signupData.email,
         signupData.password,
