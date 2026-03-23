@@ -3,6 +3,8 @@
     flex-direction: column;
     width: 100%;
     max-width: 300px;
+    align-content: center;
+    justify-content: center;
 }
 .login-logo {
     width: 50px;
@@ -81,3 +83,6 @@
     transition: background-color .1s;
 }
 
+.create-account {
+    color: rgb(34, 34, 240);
+}

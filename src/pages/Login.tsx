@@ -1,4 +1,6 @@
 import { useState } from "react"
+import { Link } from 'react-router';
+
 import strataLogo from "../assets/STRATA_Logo.png";
 import "./Login.css";
 function Login() {
@@ -31,6 +33,14 @@ function Login() {
                     <div className="login-button">
                         <button onClick={() => alert("Email: " +  loginData["email"] + " Password: " + loginData["password"])}>Sign in</button>
                     </div>
+                    <div style={{display: "flex", justifyContent: "center", paddingTop: "1rem"}}>
+                        <div>
+                        New to strata?
+                        <Link to="/signup" className="create-account"> Create an account</Link>
+                        </div>
+                        
+                    </div>
+                    
                 </div>
             </div>
         </>
