@@ -1,8 +1,9 @@
+import { getAccessToken } from "../utils/util";
 class Projects {
   private static baseUrl = "";
 
   static async getProjects() {
-    const token = localStorage.getItem("access_token");
+    const token = getAccessToken();
 
     const response = await fetch(`${this.baseUrl}/api/v1/projects`, {
       method: "GET",
@@ -22,7 +23,7 @@ class Projects {
   }
 
   static async createProject(name: string, description: string) {
-    const token = localStorage.getItem("access_token");
+    const token = getAccessToken();
 
     const response = await fetch(`${this.baseUrl}/api/v1/projects`, {
       method: "POST",
