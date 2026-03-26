@@ -6,6 +6,7 @@ import App from "./pages/App.tsx";
 import Login from "./pages/Login.tsx";
 import Repository from "./pages/Repository.tsx";
 import Signup from "./pages/Signup.tsx";
+import TestUpload from "./pages/TestUpload.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -13,7 +14,7 @@ createRoot(document.getElementById("root")!).render(
       <Routes>
         <Route path="/" element={<App/>}></Route>
         <Route path="/login" element={<Login/>}></Route>
-        <Route path="/repository" element={<Repository/>}></Route>
+        <Route path="/repository/:id" element={<Repository/>}></Route>
         <Route path="/signup" element={<Signup />}></Route>
       </Routes>
     </BrowserRouter>

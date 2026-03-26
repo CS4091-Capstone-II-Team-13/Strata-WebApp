@@ -7,6 +7,7 @@ import Projects from "../services/Projects.ts";
 
 interface Project {
   name: string;
+  id: string;
   description: string;
 }
 
@@ -53,6 +54,7 @@ function App() {
             {projects.map((project: Project) => (
               <>
                 <div>Project: {project.name}</div>
+                <div>ID: {project.id}</div>
                 <div>Description: {project.description}</div>
               </>
             ))}
