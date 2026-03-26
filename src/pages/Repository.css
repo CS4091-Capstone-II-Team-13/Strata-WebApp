@@ -1,0 +1,82 @@
+.repository-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.repository-header-container {
+    width: 70%;
+    max-width: 600px;
+    border-bottom: 1px solid rgb(80, 84, 99);
+    padding-bottom: 1rem;
+}
+
+.repository-options-container {
+    width: 70%;
+    max-width: 600px;
+    padding-bottom: .5rem;
+    padding-top: 1rem;
+}
+
+.branch-selector {
+    display: flex;
+    justify-content: center;
+    border: 1px solid rgb(80, 84, 99);
+    border-radius: 5px;
+    width: 80px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #05101f;
+}
+
+.repository-file-container {
+    width: 70%;
+    max-width: 600px;
+    display: flex;
+    border: 1px solid rgb(80, 84, 99);
+    border-radius: 5px;
+    flex-direction: column;
+    margin-top: .5rem;
+}
+
+
+
+.repository-file-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: .5rem;
+    padding-top: .5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background-color: #05101f;
+    border-radius: 5px;
+}
+.repository-file {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: .5rem;
+    padding-top: .5rem;
+    border-top: 1px solid rgb(80, 84, 99);
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.file-name {
+    width: 40%;
+}
+.file-last-commit {
+    flex-grow: 1;
+    color: rgb(126, 124, 124);
+}
+
+.file-date {
+    color: rgb(126, 124, 124);
+}
+
+.repository-name {
+    font-size: 2rem;
+}

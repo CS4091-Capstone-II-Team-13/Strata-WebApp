@@ -1,8 +1,9 @@
+import Navbar from "../components/Navbar.tsx";
+import "./App.css";
 import { useEffect, useState } from "react";
 import { useIsLoggedIn } from "../hooks/useIsLoggedIn.ts";
 import Projects from "../services/Projects.ts";
-import Navbar from "../components/Navbar.tsx";
-import "./App.css";
+
 
 interface Project {
   name: string;
