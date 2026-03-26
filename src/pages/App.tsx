@@ -1,9 +1,9 @@
 import Navbar from "../components/Navbar.tsx";
+import { Link } from "react-router";
 import "./App.css";
 import { useEffect, useState } from "react";
 import { useIsLoggedIn } from "../hooks/useIsLoggedIn.ts";
 import Projects from "../services/Projects.ts";
-
 
 interface Project {
   name: string;
@@ -53,7 +53,9 @@ function App() {
             <div style={{ fontSize: "large" }}>{projectHeader}</div>
             {projects.map((project: Project) => (
               <>
-                <div>Project: {project.name}</div>
+                <Link to={`/repository/${project.id}`}>
+                  <div>Project: {project.name}</div>
+                </Link>
                 <div>ID: {project.id}</div>
                 <div>Description: {project.description}</div>
               </>
