@@ -70,23 +70,34 @@ function Repository() {
       <div className="repository-container">
         <div className="repository-header-container">
           <div className="repository-name">{project?.name}</div>
-          <div>{JSON.stringify(projectTree)}</div>
+          {/* <div>{JSON.stringify(projectTree)}</div> */}
         </div>
-        <div className="repository-options-container">
-          <div className="branch-selector">{projectTree?.ref}</div>
-        </div>
-        <div className="repository-file-container">
-          <div className="repository-file-header">
-            <div>First</div>
-            <div>Last</div>
-          </div>
-          {projectTree?.files.map((file) => (
-            <div key={file.id} className="repository-file">
-              <div className="file-name">{file.path}</div>
-              {/* <div className="file-last-commit">{file.last_commit}</div> */}
-              <div className="file-date">{getRelativeTime(file.created_at)}</div>
+        <div className="repository-main">
+          <div className="repository-main-left">
+            <div className="repository-options-container">
+              <div className="branch-selector">{projectTree?.ref}</div>
             </div>
-          ))}
+            <div className="repository-file-container">
+              <div className="repository-file-header">
+                <div>First</div>
+                <div>Last</div>
+              </div>
+              {projectTree?.files.map((file) => (
+                <div key={file.id} className="repository-file">
+                  <div className="file-name">{file.path}</div>
+                  {/* <div className="file-last-commit">{file.last_commit}</div> */}
+                  <div className="file-date">
+                    {getRelativeTime(file.created_at)}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="repository-about">
+            <div className="repository-about-header">About</div>
+            <div className="repository-description">{project?.description}</div>
+          </div>
         </div>
       </div>
     </>
