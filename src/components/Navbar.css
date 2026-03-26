@@ -20,3 +20,6 @@
 .logo {
     width: 40px;
 }
+.navbar-login-button {
+    cursor: pointer;
+}
