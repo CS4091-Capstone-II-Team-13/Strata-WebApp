@@ -17,10 +17,10 @@ function App() {
 
   useEffect(() => {
     const initAuth = async () => {
-      if (!isLoggedIn) {
-        console.log("not logged in");
-        return;
-      }
+      // if (!isLoggedIn) {
+      //   console.log("not logged in");
+      //   return;
+      // }
 
       try {
         // const createData = await Projects.createProject(

@@ -51,7 +51,7 @@ function Login() {
               <div className="login-password-container">
                 <div>Password</div>
                 <input
-                  type="text"
+                  type="password"
                   onChange={(e) =>
                     setLoginData({ ...loginData, password: e.target.value })
                   }
