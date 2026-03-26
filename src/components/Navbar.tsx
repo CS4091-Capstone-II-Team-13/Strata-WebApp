@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router";
+import { useNavigate, Link } from "react-router";
 import { useIsLoggedIn } from "../hooks/useIsLoggedIn";
 import strataLogo from "../assets/STRATA_Logo.png";
 import "./Navbar.css";
@@ -10,7 +10,9 @@ function Navbar() {
     <>
       <div className="navbar">
         <div className="navbar-logo-container">
-          <img src={strataLogo} className="logo" alt="React logo" />
+          <Link to="/">
+            <img src={strataLogo} className="logo" alt="React logo" />
+          </Link>
         </div>
         <div className="navbar-login-container">
           {!isLoggedIn && (
