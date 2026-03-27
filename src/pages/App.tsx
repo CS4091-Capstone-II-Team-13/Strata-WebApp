@@ -66,8 +66,8 @@ function App() {
         <Navbar></Navbar>
         {isLoggedIn && (
           <>
-            <div style={{ fontSize: "large" }}>{projectHeader}</div>
-            <div>
+            <div style={{ fontSize: "large",display: "flex", justifyContent: "center"}}>{projectHeader}</div>
+            <div style={{display: "flex", justifyContent: "center"}}>
 <ProjectList projects={projects}></ProjectList>
             </div>
             

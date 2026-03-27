@@ -4,6 +4,7 @@
     flex-wrap: wrap;
     gap: 1rem;
     max-width: 900px;
+    padding-left: 1rem;
 }
 
 .projectList-project-container {
