@@ -1,6 +1,6 @@
 // import { useState } from "react";
 import Navbar from "../components/Navbar.tsx";
-import { useParams } from "react-router";
+import { useParams, Link } from "react-router";
 import "./Repository.css";
 import { useState, useEffect } from "react";
 import Projects from "../services/Projects.ts";
@@ -62,6 +62,13 @@ function Repository() {
     getProjectTree();
   }, [id]);
 
+  if (!project) {
+    <div className="navbar-container">
+        <Navbar></Navbar>
+    </div>
+    return;
+  }
+
   return (
     <>
       <div className="navbar-container">
@@ -69,6 +76,7 @@ function Repository() {
       </div>
 
       <div className="repository-container">
+        
         <div className="repository-header-container">
           <div className="repository-name">{project?.name}</div>
           {/* <div>{JSON.stringify(projectTree)}</div> */}
@@ -77,6 +85,9 @@ function Repository() {
           <div className="repository-main-left">
             <div className="repository-options-container">
               <div className="branch-selector">{projectTree?.ref}</div>
+              <div className="repository-commits">
+                <Link className="plain-link" to={`/commits/${id}`}>Commits</Link>
+              </div>
             </div>
             <div className="repository-file-container">
               <div className="repository-file-header">
