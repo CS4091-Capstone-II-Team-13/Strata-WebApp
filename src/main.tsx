@@ -6,7 +6,7 @@ import App from "./pages/App.tsx";
 import Login from "./pages/Login.tsx";
 import Repository from "./pages/Repository.tsx";
 import Signup from "./pages/Signup.tsx";
-import TestUpload from "./pages/TestUpload.tsx";
+
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>

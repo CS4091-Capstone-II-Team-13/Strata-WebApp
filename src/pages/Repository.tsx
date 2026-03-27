@@ -5,7 +5,8 @@ import "./Repository.css";
 import { useState, useEffect } from "react";
 import Projects from "../services/Projects.ts";
 import { getRelativeTime } from "../utils/utils.ts";
-interface Project {
+
+export interface Project {
   id: string;
   name: string;
   description: string;

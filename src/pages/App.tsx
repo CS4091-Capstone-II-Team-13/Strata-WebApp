@@ -1,15 +1,12 @@
 import Navbar from "../components/Navbar.tsx";
-import { Link } from "react-router";
 import "./App.css";
 import { useEffect, useState } from "react";
 import { useIsLoggedIn } from "../hooks/useIsLoggedIn.ts";
+import { type Project } from "./Repository.tsx";
 import Projects from "../services/Projects.ts";
+import ProjectList from "../components/ProjectList.tsx";
 
-interface Project {
-  name: string;
-  id: string;
-  description: string;
-}
+
 
 function App() {
   const [projects, setProjects] = useState<Project[]>([]);
@@ -25,10 +22,29 @@ function App() {
 
       try {
         // const createData = await Projects.createProject(
-        //   "Project1",
-        //   "Description of project 1",
+        //   "Project2",
+        //   "Description of project 2",
         // );
-        // console.log(createData);
+        // await Projects.createProject(
+        //   "Project3",
+        //   "Description of project 3",
+        // );
+        // await Projects.createProject(
+        //   "Project4444444444444444444444444444444444444444444444",
+        //   "DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription of project 3",
+        // );
+        // await Projects.createProject(
+        //   "Proj44444444444444444444444444444444444444",
+        //   "",
+        // );
+        // await Projects.createProject(
+        //   "Proj44123123444444444444444444444444444444444444",
+        //   "3asdasdadsweqqewqewqwe",
+        // );
+        // await Projects.createProject(
+        //   "Proj44131313123123123123444444444444444444444444444444444444",
+        //   "3asdasd3514132adsweqqewqewqwe",
+        // );
         const data = await Projects.getProjects();
 
         if (data) {
@@ -51,15 +67,10 @@ function App() {
         {isLoggedIn && (
           <>
             <div style={{ fontSize: "large" }}>{projectHeader}</div>
-            {projects.map((project: Project) => (
-              <>
-                <Link to={`/repository/${project.id}`}>
-                  <div>Project: {project.name}</div>
-                </Link>
-                <div>ID: {project.id}</div>
-                <div>Description: {project.description}</div>
-              </>
-            ))}
+            <div>
+<ProjectList projects={projects}></ProjectList>
+            </div>
+            
           </>
         )}
       </div>
