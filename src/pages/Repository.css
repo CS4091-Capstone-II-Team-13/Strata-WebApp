@@ -45,10 +45,22 @@
 
 
 .repository-options-container {
+    display: flex;
+    align-items: center;
     width: 100%;
     max-width: 600px;
     padding-bottom: .5rem;
     padding-top: 1rem;
+    gap: 1rem;
+}
+.repository-commits {
+    font-weight: 500;
+    padding: 4px;
+    border-radius: 4px;
+}
+.repository-commits:hover {
+    cursor: pointer;
+    background-color: rgba(82, 119, 175, 0.226);
 }
 
 .branch-selector {

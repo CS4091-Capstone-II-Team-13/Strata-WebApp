@@ -1,0 +1,53 @@
+.commits-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.commits-header-container {
+    max-width: 800px;
+    width: 100%;
+    border-bottom: 1px solid rgb(80, 84, 99);
+    padding-bottom: 1rem;
+    margin-left: 1rem;
+}
+
+.commits-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    max-width: 800px;
+    max-width: 800px;
+    padding-top: 2rem;
+    padding-left: 1rem;
+}
+.commits-commit {
+    border: 1px solid rgb(80, 84, 99);
+    font-weight: 500;
+    height: 64px;
+}
+.commits-commit + .commits-commit {
+  border-top: none;
+}
+.commits-commit:first-child {
+    border-top-right-radius: 6px;
+    border-top-left-radius: 6px;
+}
+.commits-commit:last-child {
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+.commits-message {
+    padding-left: 1rem;
+    padding-top: .6rem;
+}
+.commits-author {
+    padding-left: 1rem;
+    color: rgb(148, 147, 147);
+    font-size: smaller;
+}
+.commits-name {
+    font-size: 2rem;
+}

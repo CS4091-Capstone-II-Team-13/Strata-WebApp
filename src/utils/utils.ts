@@ -1,9 +1,10 @@
 export function getRelativeTime(dateString: string) {
-  const date = new Date(dateString);
-  const now = new Date();
-  const diffInSeconds = Math.floor((date - now) / 1000);
+  const date = new Date(dateString).getTime();
+  const now = new Date().getTime();
 
-  const units = [
+  const diffInSeconds = (date - now) / 1000;
+
+  const units: { unit: Intl.RelativeTimeFormatUnit; seconds: number }[] = [
     { unit: "year", seconds: 31536000 },
     { unit: "month", seconds: 2592000 },
     { unit: "day", seconds: 86400 },
@@ -15,8 +16,10 @@ export function getRelativeTime(dateString: string) {
   const rtf = new Intl.RelativeTimeFormat("en", { numeric: "auto" });
 
   for (const { unit, seconds } of units) {
-    if (Math.abs(diffInSeconds) >= seconds || unit === "second") {
-      return rtf.format(Math.round(diffInSeconds / seconds), unit);
+    const value = Math.round(diffInSeconds / seconds);
+
+    if (Math.abs(value) >= 1 || unit === "second") {
+      return rtf.format(value, unit);
     }
   }
 }
