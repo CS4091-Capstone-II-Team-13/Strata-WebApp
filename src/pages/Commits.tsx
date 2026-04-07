@@ -42,7 +42,7 @@ function Commits() {
           <div className="commits-name">Commits</div>
         </div>
         <div className="commits-main">
-          {commits.map((commit) => (
+          {commits && commits.map((commit) => (
             <div className="commits-commit">
               <div className="commits-message">{commit.message}</div>
               <div className="commits-author">Author: {commit.author_id}</div>

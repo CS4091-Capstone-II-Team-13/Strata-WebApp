@@ -11,8 +11,7 @@ function ProjectList({ projects }: Props) {
     <>
       <div className="projectList-main">
         {projects.map((project: Project) => (
-          <>
-            <div className="projectList-project-container">
+            <div key={project.id} className="projectList-project-container">
               <Link to={`/repository/${project.id}`} className="plain-link">
                 <div className="projectList-name">{project.name}</div>
               </Link>
@@ -21,7 +20,6 @@ function ProjectList({ projects }: Props) {
                 {project.description}
               </div>
             </div>
-          </>
         ))}
       </div>
     </>
