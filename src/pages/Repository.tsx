@@ -31,10 +31,7 @@ interface FileItem {
 function Repository() {
   const params = useParams();
   const id = params.id;
-  const files: FileItem[] = [
-    { name: "file1", last_commit: "Initial", date: "2026-03-12" },
-    { name: "file2", last_commit: "Added file 2", date: "2026-03-11" },
-  ];
+
   const [project, setProject] = useState<Project>();
   const [projectTree, setProjectTree] = useState<ProjectTree | null>();
 
@@ -91,8 +88,7 @@ function Repository() {
             </div>
             <div className="repository-file-container">
               <div className="repository-file-header">
-                <div>First</div>
-                <div>Last</div>
+
               </div>
               {projectTree?.files.map((file) => (
                 <div key={file.id} className="repository-file">
