@@ -61,7 +61,7 @@ export async function authenticatedFetch(url: string, options: RequestInit) {
 }
 
 class Auth {
-  private static baseUrl = "";
+  private static baseUrl = "https://strata-api.themrdt.org";
 
   static async signup(username: string, email: string, password: string) {
     const response = await fetch(`${this.baseUrl}/api/v1/auth/register`, {

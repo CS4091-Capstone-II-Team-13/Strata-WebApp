@@ -1,6 +1,6 @@
 import { authenticatedFetch } from "./Auth";
 class Projects {
-  private static baseUrl = "";
+  private static baseUrl = "https://strata-api.themrdt.org";
 
   static async getProject(projectID: string) {
     const response = await authenticatedFetch(
