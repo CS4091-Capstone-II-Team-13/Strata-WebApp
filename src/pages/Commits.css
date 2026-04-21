@@ -47,6 +47,12 @@
     padding-left: 1rem;
     color: rgb(148, 147, 147);
     font-size: smaller;
+    flex: 1;
+}
+.commits-id {
+    color: rgb(148, 147, 147);
+    font-size: smaller;
+    width: 300px;
 }
 .commits-name {
     font-size: 2rem;

@@ -43,10 +43,14 @@ function Commits() {
         </div>
         <div className="commits-main">
           {commits && commits.map((commit) => (
-            <div className="commits-commit">
+            <div key={commit.id} className="commits-commit">
               <div className="commits-message">{commit.message}</div>
               <div className="commits-author">Author: {commit.author_id}</div>
+              <div style={{display: "flex", justifyContent: "space-between"}}>
                 <div className="commits-author">Committed: {getRelativeTime(commit.created_at)}</div>
+                <div className="commits-id">Id: {commit.id}</div>
+              </div>
+                
             </div>
           ))}
         </div>
