@@ -6,8 +6,6 @@ import { type Project } from "./Repository.tsx";
 import Projects from "../services/Projects.ts";
 import ProjectList from "../components/ProjectList.tsx";
 
-
-
 function App() {
   const [projects, setProjects] = useState<Project[]>([]);
   const projectHeader = projects ? "Projects" : "No Projects Found";
@@ -66,11 +64,29 @@ function App() {
         <Navbar></Navbar>
         {isLoggedIn && (
           <>
-            <div style={{ fontSize: "large",display: "flex", justifyContent: "center"}}>{projectHeader}</div>
-            <div style={{display: "flex", justifyContent: "center"}}>
-<ProjectList projects={projects}></ProjectList>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                flexDirection: "column",
+                width: "100%",
+              }}>
+              <div
+                style={{
+                  fontSize: "3rem",
+                  display: "flex",
+                  justifyContent: "center",
+                  borderBottom: "2px solid white",
+                  width: "500px",
+                  paddingBottom: "8px"
+                }}>
+                {projectHeader}
+              </div>
+              <div style={{ display: "flex", justifyContent: "center", paddingTop: "1rem"}}>
+                <ProjectList projects={projects}></ProjectList>
+              </div>
             </div>
-            
           </>
         )}
       </div>
